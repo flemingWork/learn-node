@@ -1,7 +1,14 @@
-const Ash = require('lodash');
+const http = require('http');
 
-const arr = [[2], [3, [5, [7]], 10]];
+const server = http.createServer();
 
-const lodashArr = Ash.flatMapDeep(arr);
 
-console.log(lodashArr);
+// const server = http.createServer((req, res) => {
+//     res.end("Hello World")
+// })
+server.on('request', (req, res) => {
+    res.end("Hello Worldly World")
+})
+
+
+server.listen(5000);
